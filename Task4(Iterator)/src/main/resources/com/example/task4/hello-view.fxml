@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="CENTER" prefHeight="300.0" prefWidth="700.0"
+          xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="com.example.task4.HelloController">
+
+   <padding>
+     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+
+
+   <ImageView fx:id="pleer" fitHeight="360.0" fitWidth="660.0" pickOnBounds="true" preserveRatio="true"
+               GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+
+   <GridPane prefHeight="50.0" prefWidth="670.0" hgap="50"
+         GridPane.rowIndex="1" GridPane.columnIndex="0"
+         style="-fx-background-color: #C7FF55;">
+      <padding>
+         <Insets bottom="20.0" left="40.0" right="20.0" top="20.0" />
+      </padding>
+
+      <Button mnemonicParsing="false" onAction="#onBack" text="Back"
+              GridPane.rowIndex="0" GridPane.columnIndex="0" />
+      <Button mnemonicParsing="false" onAction="#onNext" text="Next"
+              GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+      <Button mnemonicParsing="false" onAction="#onPlay" text="Play"
+              GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+      <Button mnemonicParsing="false" onAction="#onStop" text="Stop"
+              GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+      <Button mnemonicParsing="false" onAction="#onStart" text="Start"
+              GridPane.rowIndex="0" GridPane.columnIndex="4"/>
+      <Button mnemonicParsing="false" onAction="#onChoseDirectory" text="Directory"
+              GridPane.rowIndex="0" GridPane.columnIndex="5"/>
+      <TextField fx:id="textField1" prefHeight="30.0" prefWidth="200.0"
+                 GridPane.columnIndex="0" GridPane.columnSpan="6" GridPane.rowIndex="1">
+         <opaqueInsets>
+            <Insets bottom="0.0" left="0.0" right="0.0" top="20.0"/>
+         </opaqueInsets>
+      </TextField>
+
+   </GridPane>
+
+</GridPane>

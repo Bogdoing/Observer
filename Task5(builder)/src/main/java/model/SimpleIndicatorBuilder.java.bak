@@ -1,0 +1,97 @@
+package model;
+
+import javafx.animation.PathTransition;
+import javafx.animation.Timeline;
+import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.CubicCurveTo;
+import javafx.scene.shape.MoveTo;
+import javafx.scene.shape.Path;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
+import javafx.util.Duration;
+
+public class SimpleIndicatorBuilder implements IndicatorBuilder {
+    private Indicator indicator = new Indicator();
+
+    Rectangle rectPath = new Rectangle (0, 0, 40, 40);
+
+    Text text = new Text();
+
+
+    public SimpleIndicatorBuilder(Indicator indicator) {
+        this.indicator = indicator;
+    }
+
+    public void buildText(){
+        indicator.getChildren().add(text);
+
+        text.setFont(Font.font("Edwardian Script ITC", 55));
+        text.setWrappingWidth(200);
+        text.setText("0.0%");
+        text.setX(140);
+        text.setY(50);
+
+        indicator.ubdate_text(text);
+/*
+        indicator.getChildren().add(text);
+
+        text.setFont(new Font(20));
+        text.setWrappingWidth(200);
+        text.setTextAlignment(TextAlignment.JUSTIFY);
+        text.setText("The quick brown fox jumps over the lazy dog");
+        indicator.ubdate_text(text);*/
+    }
+    @Override
+    public void buildRect() {
+        indicator.getChildren().add(rectPath);
+        rectPath.setArcHeight(10);
+        rectPath.setArcWidth(10);
+
+        rectPath.setFill(Color.ORANGE);
+        indicator.ubdate_rect(rectPath);
+    }
+
+    @Override
+    public void buildLines() {
+
+    }
+    @Override
+    public void buildCircles() {
+        /*
+        Circles circles = new Circles();
+        indicator.getChildren().add(circles);
+        circles.setFill(Color.BLACK);
+        circles.setStroke(Color.BLUE);
+        circles.setCenterX(250);
+        circles.setCenterY(200);
+        circles.setRadius(100);*/
+        //indicator.ubdate_circle(circles);
+    }
+    @Override
+    public void buildLines(TextField time) {
+/*
+        indicator.getChildren().add(lines1);
+        lines1.setStroke(Color.RED);
+        lines1.setStrokeWidth(5);
+        lines1.setStartX(250);
+        lines1.setStartY(200);
+        lines1.setEndX(250);
+        lines1.setEndY(100);
+        indicator.update(lines1, time);
+*/
+    }
+
+    @Override
+    public Indicator getIndicator() {
+        return indicator;
+    }
+
+    @Override
+    public void clearPane() {
+        indicator.getChildren().clear();
+    }
+
+}
